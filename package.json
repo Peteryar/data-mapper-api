@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose"
+    "test": "jest --watchAll --verbose",
+    "start": "node index.js"
   },
+  "engines":"10.15.3",
   "author": "",
   "license": "ISC",
   "dependencies": {

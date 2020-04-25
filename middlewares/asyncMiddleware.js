@@ -1,7 +1,7 @@
 module.exports = function (routerHandler) {
-    return async function (res, req) {
+    return async function (req, res) {
         try {
-            await routerHandler(res, req)
+            await routerHandler(req, res)
         } catch (error) {
             console.log(error.message, error)
         }
