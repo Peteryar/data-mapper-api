@@ -11,9 +11,9 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log(`connected to ${db}`))
     .catch(err => console.log(`unable to connect to ${db}`));
 
+    
+    const app = express();
     require('./prod')(app)
-
-const app = express();
 
 app.use(express.json());
 
