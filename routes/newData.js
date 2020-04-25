@@ -1,6 +1,6 @@
 const express = require('express');
-const { DataProvider, validateData, Data } = require('./dataModel');
-const asyncMiddleware = require('./middlewares/asyncMiddleware')
+const { DataProvider, validateData, Data } = require('../dataModel');
+const asyncMiddleware = require('../middlewares/asyncMiddleware')
 
 const router = express.Router()
 
