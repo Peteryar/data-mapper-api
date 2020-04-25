@@ -7,7 +7,9 @@
     "test": "jest --watchAll --verbose",
     "start": "node index.js"
   },
-  "engines": "10.15.3",
+  "engines": {
+    "node": "10.15.3"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
