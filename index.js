@@ -19,8 +19,8 @@ require('./prod')(app)
 app.use(express.json());
 
 
-app.use('/dynamicdata.com/api/data', data);
-app.use('/dynamicdata.com/api/search', searchData)
+app.use('/api/data', data);
+app.use('/api/search', searchData)
 app.use(error)
 
 const port = process.env.port || 4000;
