@@ -31,14 +31,15 @@ router.post('/', asyncMiddleware(async (req, res) => {
 
         await dataProvider.save()
     }
-    let result = await DataProvider.find().select("-_id -data._id -__v")
+    let result = await DataProvider.findOne({ providerId: req.body.providerId })
+        .select("-_id -__v -data._id");
 
     res.send(result)
 }))
 
 router.get('/', asyncMiddleware(async (req, res) => {
     const dataProviders = await DataProvider.find()
-        .select("-_id -data._id")
+        .select("-_id -data._id __v")
 
     res.send(dataProviders)
 }))
