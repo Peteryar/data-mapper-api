@@ -9,7 +9,7 @@ const db = config.get('db');
 
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log(`connected to ${db}`))
-    .catch(err => console.log(`unable to connect to ${db}`));
+    .catch(err => console.log(`unable to connect to ${db}`, err));
 
     
     const app = express();
@@ -22,6 +22,6 @@ app.use('/dynamicdata.com/api/data', data);
 app.use('/dynamicdata.com/api/search', searchData)
 app.use(error)
 
-const port = process.env.port || 3000;
+const port = process.env.port || 4000;
 
 app.listen(port, () => console.log(`lisening at port ${port}...`))
