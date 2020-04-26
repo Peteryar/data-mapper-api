@@ -23,6 +23,6 @@ app.use('/api/data', data);
 app.use('/api/search', searchData)
 app.use(error)
 
-const port = process.env.port || 4000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`lisening at port ${port}...`))
