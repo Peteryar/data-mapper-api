@@ -19,9 +19,9 @@ const Data = mongoose.model('Data', dataSchema)
 
 const dataProviderSchema = new mongoose.Schema({
     providerId: {
-        type: String,
-        minLength: 5,
-        maxLength: 5,
+        type: Number,
+        min: 10000,
+        max: 99999,
         required: true,
     },
     data: [dataSchema]
