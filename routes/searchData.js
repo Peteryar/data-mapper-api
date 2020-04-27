@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/:providerId', asyncMiddleware(async (req, res) => {
     const dataProvider = await DataProvider.findOne({
-        providerId: req.params.providerId,
+        providerId: Number(req.params.providerId),
     })
      .select("-_id -__v")
 

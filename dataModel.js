@@ -10,7 +10,8 @@ const dataSchema = new mongoose.Schema({
     age: Number,
     timestamp: {
         type: Number,
-        max: 10000000000,
+        min: 10000000,
+        max: 999999999999,
         required: true
     }
 })
@@ -33,8 +34,8 @@ function validateData(data) {
     const schema = {
         name: Joi.string().min(3).max(50).required(),
         age: Joi.number().required(),
-        timestamp:Joi.number().required().max(10000000000),
-        providerId: Joi.string().min(5).max(5).required()
+        timestamp: Joi.number().required().min(10000000).max(99999999),
+        providerId: Joi.number().min(10000).max(99999).required()
     }
     return Joi.validate(data, schema);
 }

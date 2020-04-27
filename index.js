@@ -4,6 +4,7 @@ const config = require('config');
 const data = require('./routes/newData');
 const error = require('./middlewares/error');
 const searchData = require('./routes/searchData');
+const welcome = require('./routes/welcome');
 
 const app = express();
 
@@ -18,7 +19,7 @@ require('./prod')(app)
 
 app.use(express.json());
 
-
+app.use('/', welcome);
 app.use('/api/data', data);
 app.use('/api/search', searchData)
 app.use(error)
