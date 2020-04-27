@@ -39,7 +39,7 @@ router.post('/', asyncMiddleware(async (req, res) => {
 
 router.get('/', asyncMiddleware(async (req, res) => {
     const dataProviders = await DataProvider.find()
-        .select("-_id -data._id __v")
+        .select("-_id -data._id -__v")
 
     res.send(dataProviders)
 }))
